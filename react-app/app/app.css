@@ -12,3 +12,17 @@ body {
     color-scheme: dark;
   }
 }
+
+h1, h2, h3, h4{
+  @apply font-semibold
+}
+
+button{
+  cursor: pointer;
+  height: 40px;
+  padding: 8px 12px;
+}
+
+.page-cnt{
+  padding: 32px;
+}

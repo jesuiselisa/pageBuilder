@@ -1,8 +1,7 @@
 import React from "react";
 
-export const Sidebar: React.FC = () => {
+export const Canvas: React.FC = () => {
     
-
     return (
         <div>
             

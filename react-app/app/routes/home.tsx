@@ -1,4 +1,5 @@
-import { PageBuilder } from "~/builder/components/layout/PageBuilder";
+
+import { PageBuilder } from "~/components/layout/pageBuilder";
 import type { Route } from "./+types/home";
 import { BuilderProvider } from "~/builder/context/builderContext";
 

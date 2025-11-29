@@ -1,8 +1,9 @@
 import React from "react";
-import { exportElementsToJson } from "../../utils/export";
+import { exportElementsToJson } from "../../builder/utils/export";
 import { useBuilder } from "~/builder/context/builderContext";
-import { Sidebar } from "./sideBar";
+import { Sidebar } from "./sidebar";
 import { Canvas } from "./canvas";
+import { ButtonComponent } from "../common/buttonComponent";
 
 export const PageBuilder: React.FC = () => {
     const { elements } = useBuilder();
@@ -13,14 +14,12 @@ export const PageBuilder: React.FC = () => {
     };
 
     return (
-        <div>
+        <main className="page-builder flex">
             <Sidebar />
-            <div>
-                <div>
-                    <button onClick={handleExport}>Export JSON</button>
-                </div>
+            <section className="page-cnt flex-1 flex flex-col content-between">
                 <Canvas />
-            </div>
-        </div>
+                <ButtonComponent text="Export JSON" func={handleExport}/>
+            </section>
+        </main>
     );
 };

@@ -1,0 +1,11 @@
+import React from "react";
+
+export const Canvas: React.FC = () => {
+    
+
+    return (
+        <div>
+            
+        </div>
+    );
+};

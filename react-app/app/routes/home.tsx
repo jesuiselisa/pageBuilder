@@ -1,5 +1,6 @@
+import { PageBuilder } from "~/builder/components/layout/PageBuilder";
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import { BuilderProvider } from "~/builder/context/builderContext";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,5 +10,9 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <Welcome />;
+  return (
+    <BuilderProvider>
+      <PageBuilder/>
+    </BuilderProvider>
+  );
 }

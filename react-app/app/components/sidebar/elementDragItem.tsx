@@ -8,7 +8,7 @@ type ElementDragItemProps = {
     type: ElementType;
 };
 
-const DRAG_DATA_KEY = "application/x-pagebuilder-element";
+export const DRAG_DATA_KEY = "application/x-pagebuilder-element";
 
 export const ElementDragItem = ({ icon, title, description, type }: ElementDragItemProps) => {
     const handleDragStart = (e: React.DragEvent<HTMLDivElement>) => {

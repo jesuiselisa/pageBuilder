@@ -15,7 +15,7 @@ export const SvgComponent = ({ img, alt = "icon", lazy, classN }: PropsType) => 
     return (
         <img
             loading={lazy ? "lazy" : "eager"}
-            className={`text-gray-400 ${classN ? classN : ''}`}
+            className={`text-gray-400 icon ${classN ? classN : ''}`}
             src={src}
             alt={alt}
         />

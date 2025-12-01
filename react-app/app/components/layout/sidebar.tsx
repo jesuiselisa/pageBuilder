@@ -12,31 +12,31 @@ type PaletteItem = {
 const components: PaletteItem[] = [
     {
         type: "header",
-        icon: "menu",
+        icon: "test",
         title: "Header",
         description: "Page header with navigation",
     },
     {
         type: "slider",
-        icon: "slider",
+        icon: "test",
         title: "Slider",
         description: "Image slider carousel",
     },
     {
         type: "card",
-        icon: "card",
+        icon: "test",
         title: "Card",
         description: "Custom row with 1-3 columns",
     },
     {
         type: "text-content",
-        icon: "text",
+        icon: "test",
         title: "Text Content",
         description: "Content cards with text & images",
     },
     {
         type: "footer",
-        icon: "text",
+        icon: "test",
         title: "Footer",
         description: "Content cards with text & images",
     },

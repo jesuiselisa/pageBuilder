@@ -26,3 +26,11 @@ button{
 .page-cnt{
   padding: 32px;
 }
+
+.icon{
+  max-width: 24px;
+}
+
+.page-cnt button{
+  margin-top: 24px;
+}

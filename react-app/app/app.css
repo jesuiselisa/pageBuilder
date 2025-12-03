@@ -19,18 +19,16 @@ h1, h2, h3, h4{
 
 button{
   cursor: pointer;
-  height: 40px;
-  padding: 8px 12px;
 }
 
 .page-cnt{
-  padding: 32px;
+  padding: 0 24px;
 }
 
 .icon{
   max-width: 24px;
 }
 
-.page-cnt button{
+.export-btn{
   margin-top: 24px;
 }

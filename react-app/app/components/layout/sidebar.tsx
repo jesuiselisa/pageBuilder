@@ -1,6 +1,7 @@
 import type { ElementType } from "~/builder/types/common";
 import { ElementDragItem } from "../sidebar/elementDragItem";
 import { ButtonComponent } from "../common/buttonComponent";
+import { useBuilder } from "~/builder/context/builderContext";
 
 type PaletteItem = {
     type: ElementType;
@@ -44,10 +45,12 @@ const components: PaletteItem[] = [
 ];
 
 export const Sidebar = () => {
+    const { clearElements } = useBuilder();
+
     return (
         <aside className="sidebar w-72 bg-gray-900 text-white p-6 overflow-y-auto">
             <h1 className="text-xl mb-6 text-purple-300">Page Builder</h1>
-            <ButtonComponent text="New Page" func={()=>{}}/>
+            <ButtonComponent text="New Page" func={clearElements} />
             <h2 className="text-xs tracking-wider text-gray-500 mb-4">COMPONENTS</h2>
             <div>
                 {components.map((comp) => (

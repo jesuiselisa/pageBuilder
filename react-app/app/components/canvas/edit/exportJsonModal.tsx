@@ -1,5 +1,6 @@
 import React from "react";
-import { BaseModal } from "./BaseModal";
+import { BaseModal } from "./baseModal";
+import { ButtonComponent } from "~/components/common/buttonComponent";
 
 type ExportJsonModalProps = {
     open: boolean;
@@ -39,13 +40,7 @@ export const ExportJsonModal: React.FC<ExportJsonModalProps> = ({
                     </pre>
                 </div>
                 <div className="flex justify-end">
-                    <button
-                        type="button"
-                        onClick={handleCopy}
-                        className="px-4 py-2 text-sm rounded-md bg-blue-600 text-white hover:bg-blue-700"
-                    >
-                        {copied ? "Copied!" : "Copy"}
-                    </button>
+                    <ButtonComponent text={copied ? "Copied!" : "Copy"} func={handleCopy} classN="px-4 py-2 text-sm rounded-md bg-blue-600 text-white hover:bg-blue-700" />
                 </div>
             </div>
         </BaseModal>

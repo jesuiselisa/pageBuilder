@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from "react";
 import type { SliderSlideContent } from "~/builder/types/state";
+import { ButtonComponent } from "~/components/common/buttonComponent";
 
 type SliderBlockProps = {
     slides?: SliderSlideContent[];
@@ -74,8 +75,8 @@ export const SliderBlock: React.FC<SliderBlockProps> = ({
                             (idx === 0
                                 ? "bg-gradient-to-r from-purple-500 to-indigo-500"
                                 : idx === 1
-                                ? "bg-gradient-to-r from-emerald-500 to-teal-500"
-                                : "bg-gradient-to-r from-orange-500 to-pink-500");
+                                    ? "bg-gradient-to-r from-emerald-500 to-teal-500"
+                                    : "bg-gradient-to-r from-orange-500 to-pink-500");
 
                         return (
                             <div
@@ -108,13 +109,7 @@ export const SliderBlock: React.FC<SliderBlockProps> = ({
                 </div>
             </div>
             <div className="flex items-center justify-between px-4 py-3 bg-gray-900">
-                <button
-                    type="button"
-                    onClick={handlePrev}
-                    className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 transition-colors flex items-center justify-center text-sm"
-                >
-                    ‹
-                </button>
+                <ButtonComponent icon="before" func={handlePrev} classN="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 transition-colors flex items-center justify-center text-sm" />
                 <div className="flex gap-2">
                     {effectiveSlides.map((_, i) => (
                         <button
@@ -130,13 +125,7 @@ export const SliderBlock: React.FC<SliderBlockProps> = ({
                         />
                     ))}
                 </div>
-                <button
-                    type="button"
-                    onClick={handleNext}
-                    className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 transition-colors flex items-center justify-center text-sm"
-                >
-                    ›
-                </button>
+                <ButtonComponent icon="after" func={handleNext} classN="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 transition-colors flex items-center justify-center text-sm" />
             </div>
         </div>
     );

@@ -1,15 +1,22 @@
 import React from 'react'
+import { SvgComponent } from './svgComponent';
 
 type PropsType = {
     classN?: string;
-    text: string;
-    func: () => void;
+    text?: string;
+    icon?: string;
+    func: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
-export const ButtonComponent = ({ classN, text, func }: PropsType) => {
+export const ButtonComponent = ({ classN, text, func, icon }: PropsType) => {
     return (
-        <button className={`w-full px-4 py-2 mb-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors ${classN ? classN : ""}`} onClick={func}>
-            <span className='text-white'>{text}</span>
+        text !== undefined ?
+        <button className={`${classN ? classN : ""}`} onClick={func}>
+            <span>{text}</span>
+        </button>
+        :
+        <button className={`w-7 h-7 rounded-full flex items-center justify-center text-xs shadow-sm hover:shadow-md transition-opacity transition-colors ${classN ? classN : ""}`} onClick={func}>
+            <SvgComponent img={icon}/>
         </button>
     )
 }

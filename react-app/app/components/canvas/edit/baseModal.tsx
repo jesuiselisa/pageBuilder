@@ -1,5 +1,5 @@
 import React from "react";
-import { IconButtonComponent } from "~/components/common/iconButtonComponent";
+import { ButtonComponent } from "~/components/common/buttonComponent";
 
 type BaseModalProps = {
     open: boolean;
@@ -43,13 +43,7 @@ export const BaseModal: React.FC<BaseModalProps> = ({
                 className={`w-full ${panelClassName} rounded-xl bg-white shadow-lg p-6 relative`}
                 onClick={handleInnerClick}
             >
-                <IconButtonComponent
-                    onClick={onCancel}
-                    ariaLabel="Close"
-                    className="absolute top-3 right-3 bg-gray-100 hover:bg-gray-200 text-gray-600"
-                >
-                    ×
-                </IconButtonComponent>
+                <ButtonComponent icon="close" func={onCancel} classN="absolute top-3 right-3 bg-gray-100 hover:bg-gray-200"/>
 
                 {title && (
                     <h3 className="text-sm font-semibold mb-3">
@@ -61,21 +55,9 @@ export const BaseModal: React.FC<BaseModalProps> = ({
 
                 {showFooter && (
                     <div className="mt-4 flex justify-end gap-3">
-                        <button
-                            type="button"
-                            onClick={onCancel}
-                            className="px-4 py-2 text-sm rounded-md border border-gray-300 text-gray-700 bg-white hover:bg-gray-50"
-                        >
-                            {cancelLabel}
-                        </button>
+                        <ButtonComponent text="Cancel" func={onCancel} classN="px-4 py-2 text-sm rounded-md border border-gray-300 text-gray-700 bg-white hover:bg-gray-50"/>
                         {onDone && (
-                            <button
-                                type="button"
-                                onClick={onDone}
-                                className="px-4 py-2 text-sm rounded-md bg-blue-600 text-white hover:bg-blue-700"
-                            >
-                                {doneLabel}
-                            </button>
+                            <ButtonComponent text="Done" func={onDone} classN="px-4 py-2 text-sm rounded-md bg-blue-600 text-white hover:bg-blue-700"/>
                         )}
                     </div>
                 )}

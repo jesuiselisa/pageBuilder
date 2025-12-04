@@ -29,6 +29,10 @@ button{
   max-width: 24px;
 }
 
+button .icon{
+  max-width: 16px;
+}
+
 .export-btn{
   margin-top: 24px;
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import type { SliderSlideContent } from "~/builder/types/state";
-import { BaseModal } from "./BaseModal";
+import { BaseModal } from "./baseModal";
+import { ButtonComponent } from "~/components/common/buttonComponent";
 
 type SliderEditorModalProps = {
     open: boolean;
@@ -102,13 +103,7 @@ export const SliderEditorModal: React.FC<SliderEditorModalProps> = ({
                             }}
                         />
                         {currentSlide.imageUrl && (
-                            <button
-                                type="button"
-                                className="text-xs text-red-500 hover:underline"
-                                onClick={() => handleFieldChange("imageUrl", "")}
-                            >
-                                Remove
-                            </button>
+                            <ButtonComponent text="Remove" func={() => handleFieldChange("imageUrl", "")} classN="text-xs text-red-500 hover:underline"/>
                         )}
                     </div>
                     {currentSlide.imageUrl && (
